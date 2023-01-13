@@ -314,5 +314,19 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/projects/184/stages/931/implement#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #7
+
+    The program should calculate and print the parity of the given number.
+
+    Please find below the output of your program during this failed test.
+    Note that the &#39;&gt;&#39; character indicates the beginning of the input line.
+
+    ---
+
+    Enter a natural number:
+    &gt; 1
+  time: "Fri, 13 Jan 2023 20:55:46 UTC"
 record: -1
