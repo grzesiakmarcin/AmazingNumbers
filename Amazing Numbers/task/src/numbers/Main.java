@@ -8,9 +8,7 @@ public class Main {
         AllMyMethods obiekt = new AllMyMethods();
         passedNumber=obiekt.enterNumber();
         obiekt.checkNaturalNumber(passedNumber);
-
-
-
+        obiekt.checkEven(passedNumber);
 
 
 
@@ -35,5 +33,31 @@ public class Main {
              }
         }
 
+        void checkLastDig(String putNumber){
+             int lenght = putNumber.length();
+             char[] table = putNumber.toCharArray();
+             if(table.length-1==7){
+                 System.out.println(putNumber = " ends with 7");
+             }
+
+        }
+
+
+        void checkDivisible(String putNumber){
+
+            if(Integer.parseInt(putNumber) % 7 == 0){
+                System.out.println(putNumber = " is divisible 7");
+            }
+
+        }
+
+        void checkEven(String putNumer){
+             if(Integer.parseInt(putNumer)%2==0){
+                 System.out.println("This number is Odd.");
+             }
+             else {
+                 System.out.println("This number is Even.");
+             }
+        }
     }
 }
