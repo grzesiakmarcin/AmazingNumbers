@@ -3,103 +3,176 @@ package numbers;
 import java.util.Scanner;
 
 public class Main {
-    public  static  void main(String[] args) {
-        String[] tableOfAnswers= new String[4];
-        String passedNumber;
-
-        AllMyMethods obiekt = new AllMyMethods();
-        passedNumber=obiekt.enterNumber();
-        obiekt.checkNaturalNumber(passedNumber,tableOfAnswers);
-        obiekt.checkEven(passedNumber,tableOfAnswers);
-        obiekt.checkDivisible(passedNumber,tableOfAnswers);
-        obiekt.checkLastDig(passedNumber,tableOfAnswers);
-        obiekt.printAllinfo(tableOfAnswers);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to Amazing Numbers!\n" +
+                "\n" +
+                "Supported requests:\n" +
+                "- enter a natural number to know its properties;\n" +
+                "- enter 0 to exit." +
+                "\nEnter a request:");
 
 
+        while (true) {
+            String inputS = sc.next();
+            long input = Long.valueOf(inputS);
+            if (input < 0) {
+                System.out.println("The first parameter should be a natural number or zero.\n"
+                        + "Enter a request:");
+
+            } else if (input == 0) {
+                System.out.println("Goodbye!");
+                System.exit(1);
+            } else {
+                Numero workWithNewNumber = new Numero(input);
+                System.out.println(workWithNewNumber.toString());
+                System.out.println("\nEnter a request:");
+            }
+        }
+    }
+}
+
+class Numero {
+
+    long numberLong;
+    boolean even;
+    boolean odd;
+    boolean buzz;
+    boolean duck;
+    boolean palimdromic;
+    boolean gapful;
+
+    public Numero(long number) {
+        this.numberLong = number;
+    }
+
+    public void isEvenOrOddMethod(long n) {
+        if (n % 2 == 0) {
+            setEven(true);
+            setOdd(false);
+        } else {
+            setEven(false);
+            setOdd(true);
+        }
+    }
+
+    public void isDuckMethod(long n) {
+        String input = String.valueOf(n);
+
+        for (int i = 1; i < input.length(); i++) {
+            if (input.charAt(i) == '0') {
+                setDuck(true);
+            }
+        }
 
     }
 
-    static class AllMyMethods{
-        void printAllinfo(String[] tab){
-            for (String element:tab
-                 ) {
-                System.out.println(element);
+    public void isBuzzMethod(long n) {
 
-            }
 
+        boolean isBuzzNumber = false;
+        boolean endsWithSeven = false;
+        boolean divisibleBy7 = false;
+
+        if (String.valueOf(n).charAt(String.valueOf(n).length() - 1) == '7') {
+            setBuzz(true);
+            //   endsWithSeven = true;
+        }
+        if (n % 7 == 0) {
+            setBuzz(true);
 
         }
 
-
-
-
-         String enterNumber (){
-            Scanner scan=new Scanner(System.in);
-            System.out.println("Enter natural number");
-            return  scan.next();
-        }
-
-        String[] checkNaturalNumber(String putNumber,String[]tableOfAnswers){
-             int checkThis = Integer.parseInt(putNumber);
-
-             if(checkThis<=0){
-                 System.out.println("This number is not natural!");
-                 System.exit(1);
-             }
-             else {tableOfAnswers[2]="Explanation:";
-             tableOfAnswers[3]=putNumber+ " ";
-             }
-             return tableOfAnswers;
-
-
-        }
-
-        String[] checkDivisible(String putNumber,String [] tableOfAnswers){
-            StringBuilder sb= new StringBuilder();
-
-            if(Integer.parseInt(putNumber) % 7 == 0){
-                tableOfAnswers[1]="It is a Buzz number.";
-                tableOfAnswers[3]=  String.valueOf(sb.append(tableOfAnswers[3] + "is divisible by 7"));
-            }
-            else{
-                tableOfAnswers[1]="It is not a Buzz number.";
-                tableOfAnswers[3]= String.valueOf(sb.append(tableOfAnswers[3] + " is not divisible by 7"));
-            }
-            return tableOfAnswers;
-
-        }
-
-        String[] checkLastDig(String putNumber, String[] tablOfAnswers){
-            StringBuilder sb = new StringBuilder();
-            Integer.parseInt(putNumber);
-             char[] table = String.
-
-                int counter = 1;
-            for (char element:table             ) {
-                System.out.println(element+ "element " + counter);
-                counter++;
-            }
-
-             if(table.length-1=='7'){
-                 tablOfAnswers[1]="It is a Buzz number.";
-                 tablOfAnswers[3]=String.valueOf(sb.append(tablOfAnswers[3]+" ends with 7"));
-             }
-             else {
-                 tablOfAnswers[3]=String.valueOf(sb.append(tablOfAnswers[3]+" nor ends with 7"));
-             }
-             return tablOfAnswers;
-
-        }
-
-
-        String[] checkEven(String putNumer,String[] tableOfAnswers ){
-             if(Integer.parseInt(putNumer)%2==0){
-                 tableOfAnswers[0]=("This number is Odd.");
-             }
-             else {
-                 tableOfAnswers[0]=("This number is Even.");
-             }
-             return  tableOfAnswers;
-        }
     }
+
+    public void isPalindromic(long n) {
+        String val = String.valueOf(n);
+        StringBuilder sb = new StringBuilder(val).reverse();
+        if (sb.toString().equals(val)) {
+            palimdromic = true;
+        } else palimdromic = false;
+    }
+
+    public void isGapful(long n) {
+        String val = String.valueOf(n);
+        StringBuilder sb = new StringBuilder();
+        char frontNote = val.charAt(0);
+        char endNote = val.charAt(val.length() - 1);
+
+        String output = String.valueOf(sb.append(frontNote));
+        output = String.valueOf(sb.append(endNote));
+        Integer theNumber = Integer.parseInt(output);
+
+
+        if (n % theNumber == 0&& n>99) {
+            gapful = true;
+        } else gapful = false;
+
+    }
+
+    @Override
+    public String toString() {
+        isEvenOrOddMethod(numberLong);
+        isBuzzMethod(numberLong);
+        isDuckMethod(numberLong);
+        isPalindromic(numberLong);
+        return "Properties of " + getNumber() +
+                "\n      even: " + even +
+                "\n       odd: " + odd +
+                "\n      buzz: " + buzz +
+                "\n     duck : " + duck +
+                "\nPALINDROMIC: " + palimdromic +
+                "\n     gapful: " + gapful;
+    }
+
+
+    public long getNumber() {
+        return numberLong;
+    }
+
+    public void setNumber(int number) {
+        this.numberLong = number;
+    }
+
+    public boolean isEven() {
+        return even;
+    }
+
+    public void setEven(boolean even) {
+        this.even = even;
+    }
+
+    public boolean isOdd() {
+        return odd;
+    }
+
+    public void setOdd(boolean odd) {
+        this.odd = odd;
+    }
+
+    public boolean isBuzz() {
+        return buzz;
+    }
+
+    public void setBuzz(boolean buzz) {
+        this.buzz = buzz;
+    }
+
+    public boolean isDuck() {
+        return duck;
+    }
+
+    public void setDuck(boolean duck) {
+        this.duck = duck;
+    }
+
+    public boolean isGapful() {
+        return gapful;
+    }
+
+    public void setGapful(boolean gapful) {
+        this.gapful = duck;
+    }
+
+
 }

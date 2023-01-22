@@ -751,5 +751,22 @@ files:
     }
   learner_created: false
 feedback_link: https://hyperskill.org/learn/step/13201#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #1
+
+    Expected that the output contains &quot;two natural numbers&quot;.
+
+    Please find below the output of your program during this failed test.
+
+    ---
+
+    Welcome to Amazing Numbers!
+
+    Supported requests:
+    - enter a natural number to know its properties;
+    - enter 0 to exit.
+    Enter a request:
+  time: Sun, 22 Jan 2023 13:40:43 UTC
 record: -1

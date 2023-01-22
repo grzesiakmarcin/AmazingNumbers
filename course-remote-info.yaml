@@ -3,11 +3,11 @@ hyperskill_project:
   ide_files: https://stepik.org/media/attachments/lesson/531718/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Thu, 19 Jan 2023 05:23:15 UTC"
+update_date: Sun, 22 Jan 2023 17:45:06 UTC
 stages:
 - id: 931
   step: 13198
-  is_completed: false
+  is_completed: true
 - id: 932
   step: 13199
   is_completed: true
@@ -102,7 +102,7 @@ topics:
   - title: Processing strings
     theory_id: 3551
   4:
-  - title: "Write, compile, and run"
+  - title: Write, compile, and run
     theory_id: 3739
   - title: Overloading
     theory_id: 3525

@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="NumbersTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-01-17T20:05:01" hostname="Mac-mini-Marcin.local" time="0.594">
+<testsuite name="NumbersTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-01-22T13:40:42" hostname="DESKTOP-4RRBCPT" time="0.223">
   <properties/>
-  <testcase name="start" classname="NumbersTest" time="0.594">
-    <failure message="java.lang.AssertionError: Wrong answer in test #7&#10;&#10;Number's parity is incorrect. Number 1 should be odd.&#10;&#10;Please find below the output of your program during this failed test.&#10;Note that the '&gt;' character indicates the beginning of the input line.&#10;&#10;---&#10;&#10;Enter a natural number:&#10;&gt; 1&#10;This number is Even." type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #7
+  <testcase name="start" classname="NumbersTest" time="0.223">
+    <failure message="java.lang.AssertionError: Wrong answer in test #1&#10;&#10;Expected that the output contains &quot;two natural numbers&quot;.&#10;&#10;Please find below the output of your program during this failed test.&#10;&#10;---&#10;&#10;Welcome to Amazing Numbers!&#10;&#10;Supported requests:&#10;- enter a natural number to know its properties;&#10;- enter 0 to exit.&#10;Enter a request:" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #1
 
-Number's parity is incorrect. Number 1 should be odd.
+Expected that the output contains &quot;two natural numbers&quot;.
 
 Please find below the output of your program during this failed test.
-Note that the '&gt;' character indicates the beginning of the input line.
 
 ---
 
-Enter a natural number:
-&gt; 1
-This number is Even.
+Welcome to Amazing Numbers!
+
+Supported requests:
+- enter a natural number to know its properties;
+- enter 0 to exit.
+Enter a request:
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:203)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -63,39 +65,12 @@ This number is Even.
   </testcase>
   <system-out><![CDATA[?[1;31m
 Start test 1?[0m
-Enter a natural number:
-> 0
-This number is not natural!
-?[1;31m
-Start test 2?[0m
-Enter a natural number:
-> -1
-This number is not natural!
-?[1;31m
-Start test 3?[0m
-Enter a natural number:
-> -2
-This number is not natural!
-?[1;31m
-Start test 4?[0m
-Enter a natural number:
-> -3
-This number is not natural!
-?[1;31m
-Start test 5?[0m
-Enter a natural number:
-> -4
-This number is not natural!
-?[1;31m
-Start test 6?[0m
-Enter a natural number:
-> -5
-This number is not natural!
-?[1;31m
-Start test 7?[0m
-Enter a natural number:
-> 1
-This number is Even.
+Welcome to Amazing Numbers!
+
+Supported requests:
+- enter a natural number to know its properties;
+- enter 0 to exit.
+Enter a request:
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
